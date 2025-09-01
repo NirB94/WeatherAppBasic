@@ -1,0 +1,63 @@
+<!--
+    Weather App - Main Interface Template
+    
+    This Handlebars template provides the main user interface for the weather application.
+    It includes:
+    - Weather search form for manual city input
+    - Weather display widget showing temperature, condition, and location
+    - Automatic geolocation detection (handled by JavaScript)
+    - Date display
+    
+    Template Variables:
+    - title: Page title passed from the server
+    
+    Dependencies:
+    - CSS: /css/styles.css
+    - JavaScript: /js/app.js
+    - Partial: header.hbs
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <div class="main-content">
+            <!-- Include header partial -->
+            {{>header}}
+            
+            <!-- Main weather widget -->
+            <article class="widget"> 
+                <!-- Search form for manual city input -->
+                <form class="weatherLocation">
+                    <input class="input-field" type="text" placeholder="Enter your city" aria-label="City name" />
+                    <button class="search-button" type="submit">Search</button>
+                </form>
+                
+                <!-- Weather information display -->
+                <div class="icon-and-weatherInfo">
+                    <!-- Weather icon -->
+                    <div class="weatherIcon">
+                        <i aria-hidden="true"></i>
+                    </div>
+                    
+                    <!-- Temperature and condition -->
+                    <div class="weatherInfo">
+                        <div class="temperature"><span></span></div>
+                        <div class="weatherCondition"></div>
+                    </div>
+                </div>
+                
+                <!-- Location and date display -->
+                <div class="place"></div>
+                <div class="date"></div>
+            </article>
+        </div>
+        
+        <!-- Main application JavaScript -->
+        <script src="js/app.js"></script>
+    </body>
+</html>

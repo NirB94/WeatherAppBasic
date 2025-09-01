@@ -90,7 +90,7 @@ app.get("/reverse-geocode", (req, res) => {
     }
     
     // Use OpenWeatherMap's reverse geocoding API
-    const apiKey = "ff576ceec1e9f4e798b23382b04b0d2d";
+    const apiKey = "CENSORED"; // Censored for privacy
     const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`;
     
     request({ url, json: true }, (error, response) => {
